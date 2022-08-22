@@ -1,0 +1,18 @@
+rules:
+- id: external-data-source
+  patterns:
+  - pattern: data "external" "..." {...}
+  languages:
+  - generic
+  paths:
+    include:
+    - '*.tf'
+  severity: WARNING
+  message: External data source
+  metadata:
+    references:
+    - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#acl
+    - https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl
+    category: security
+    technology:
+    - terraform
